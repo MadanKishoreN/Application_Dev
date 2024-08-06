@@ -1,0 +1,71 @@
+/* SignUp.css */
+
+/* Container styles */
+.signup-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.signup-image {
+  flex: 1;
+  background-image: url('../Images/loginImage.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+}
+
+.signup-form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px; /* Reduced padding */
+}
+
+.custom-card {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+}
+
+.custom-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #00796b; /* Accent color */
+}
+
+.custom-form-group {
+  margin-bottom: 1rem;
+}
+
+.custom-form-group .MuiTextField-root {
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+button {
+  margin-top: 1rem;
+  
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-image {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .signup-form {
+    padding: 1rem;
+  }
+}

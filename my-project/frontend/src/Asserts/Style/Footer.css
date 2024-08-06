@@ -1,0 +1,231 @@
+/* Footer.css
+
+/* Footer Container 
+footer {
+  background-color: #e2e8f0; /* Light slate background 
+  font-family: 'Arial, sans-serif'; /* Font family 
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 2rem;
+}
+
+/* Footer Inner Container 
+footer .max-w-screen-xl {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+}
+
+/* Top Section 
+footer .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+footer .lg\\:grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Text and Logo 
+footer p.custom-text {
+  font-size: 2.5rem;
+  color: #1a202c; /* Dark grey text 
+  margin-bottom: 1rem;
+}
+
+footer p {
+  color: #4a5568; /* Medium grey text 
+  margin: 0;
+}
+
+/* Social Links 
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  margin-right: 1rem;
+}
+
+footer ul li a {
+  color: #4a5568; /* Medium grey text 
+  transition: opacity 0.3s ease;
+}
+
+footer ul li a:hover {
+  opacity: 0.75;
+}
+
+/* Footer Navigation 
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer nav ul li a {
+  color: #4a5568; /* Medium grey text 
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+footer nav ul li a:hover {
+  opacity: 0.75;
+}
+
+/* Legal and Other Links 
+footer .grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+footer .lg\\:col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+footer .lg\\:grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Footer Contact Info 
+footer .text-xs {
+  color: #718096; /* Light grey text 
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Responsive Styles 
+@media (min-width: 768px) {
+  footer .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer .grid-cols-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  footer .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  footer .grid-cols-1 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+} */
+/* Overall footer styles */
+/* Overall footer styles */
+.footer {
+  background-color: #f8f3f3; /* White background color for the footer */
+  padding: 40px 20px;
+  color: #ecf2ed; /* Dark text color for contrast */
+}
+
+/* Container for all footer sections */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center-aligns all footer sections horizontally */
+  max-width: 1200px; /* Max width for better readability */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Individual footer items */
+.footer-item {
+  padding: 20px;
+  border-radius: 12px; /* Increase border-radius for smoother edges */
+  background: #f8f9fa; /* Light gray background for individual items */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for background and shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Hover effect for footer items */
+.footer-item:hover {
+  background-color: #e9ecef; /* Slightly darker gray on hover */
+}
+
+/* Header styles */
+.footer-item h2,
+.footer-item h5 {
+  color: #2181e8; /* Primary color for headings */
+  margin-bottom: 10px;
+  font-weight: bold; /* Bold font weight for emphasis */
+}
+
+/* Main title styles */
+.footer-item h2 {
+  font-size: 24px; /* Larger size for main titles */
+}
+
+/* Section header styles */
+.footer-item h5 {
+  font-size: 18px; /* Size for section headers */
+}
+
+/* Paragraphs and lists in footer items */
+.footer-item p,
+.footer-item ul {
+  color: #333333; /* Dark color for text */
+}
+
+/* Unordered list styles */
+.footer-item ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* List item styles */
+.footer-item ul li {
+  margin-bottom: 8px;
+}
+
+/* Link styles */
+.footer-item a {
+  color: #333333; /* Dark color for links */
+  text-decoration: none; /* No underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Link hover effect */
+.footer-item a:hover {
+  color: #007bff; /* Primary color on hover */
+}
+
+/* Social icon styles */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-left: 675px;
+}
+
+/* Individual social icon styles */
+.social-icon {
+  font-size: 24px;
+  color: #333333; /* Dark color for icons */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Social icon hover effect */
+.social-icon:hover {
+  color: #007bff; /* Primary color on hover */
+}
+
+/* Bottom text alignment */
+.footer-bottom {
+  text-align: center;
+  color: #333333; /* Dark color for bottom text */
+  margin-top: 20px;
+}

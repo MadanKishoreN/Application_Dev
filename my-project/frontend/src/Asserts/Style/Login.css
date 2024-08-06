@@ -1,0 +1,106 @@
+/* Container styles */
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.login-image {
+  flex: 1;
+  background-image: url('../Images/image3.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Ensure the image takes full height */
+}
+
+.login-form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-top: -50px; /* Adjust this value as needed to move the form upwards */
+}
+
+.custom-card {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  content: url('../Images/logo1.png'); /* Replace with your logo path */
+}
+
+.custom-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #00796b; /* Accent color */
+}
+
+.custom-form-group {
+  margin-bottom: 1rem;
+}
+
+.custom-form-group .MuiTextField-root {
+  margin-bottom: 1rem;
+}
+
+.login-button {
+  margin-bottom: 1rem;
+  background-color: #00796b; /* Accent color */
+  color: #ffffff; /* Ensure text is visible on the button */
+}
+
+.forgot-password {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.forgot-password-link {
+  text-decoration: none;
+  color: #00796b;
+}
+
+.social-login {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.social-button {
+  margin-bottom: 0.5rem;
+}
+
+.signup-link {
+  text-align: center;
+}
+
+.signup-link-text {
+  text-decoration: none;
+  color: #00796b;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .login-form {
+    padding: 1rem;
+  }
+}

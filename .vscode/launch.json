@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-JobsearchApplication<jobsearch>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.backend.jobsearch.JobsearchApplication",
+            "projectName": "jobsearch",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

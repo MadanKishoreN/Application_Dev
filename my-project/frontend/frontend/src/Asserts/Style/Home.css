@@ -1,0 +1,183 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.home {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header Styles */
+.header {
+  background: url('../Images/HP.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  height: 80vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #004a99; /* Fallback color */
+  background-position: center calc(50% - 80px);
+}
+
+.header h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  color: #066bcf;
+}
+
+.header p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #141313;
+}
+
+/* Main Content Styles */
+.main-content {
+  padding: 20px;
+}
+
+/* Company Offers Section */
+.company-offers {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.company-offers h2 {
+  margin-bottom: 20px;
+  color: #005bb5;
+}
+
+.company-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.company-card {
+  background-color: #e6f0ff;
+  border: 1px solid #cce0ff;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.company-logo {
+  max-width: 60px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+  transform: rotateY(180deg);
+}
+
+/* Toggle Button */
+.toggle-button {
+  background-color: #005bb5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px auto;
+  display: block;
+}
+
+.toggle-button:hover {
+  background-color: #004a99;
+}
+
+/* Find Job Button */
+.find-job-button {
+  background-color: #0069d9; /* Primary color */
+  color: white; /* Text color */
+  padding: 12px 24px; /* Padding for the button */
+  font-size: 1.2em; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  margin-top: 20px; /* Space above the button */
+}
+
+.find-job-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.find-job-button:active {
+  background-color: #004494; /* Even darker shade when pressed */
+  transform: scale(0.98); /* Slightly scale down the button */
+}
+
+.find-job-button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Add focus ring */
+}
+
+/* Responsive Hero Container */
+.hero-container {
+  width: 90%; /* Default width for larger screens */
+  max-width: 1200px;
+  height: 400px;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px; /* Smooth edges */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Optional: shadow for more depth */
+  padding: 50px;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0 auto; /* Center the container */
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    width: 85%; /* Adjust width for medium screens */
+    height: 350px; /* Slightly decrease the height */
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    width: 90%; /* Adjust width for small screens */
+    height: 300px; /* Further decrease the height */
+    padding: 30px;
+    border-radius: 15px; /* Slightly smaller border-radius */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    width: 95%; /* Adjust width for very small screens */
+    height: 250px; /* Further decrease the height */
+    padding: 20px;
+    border-radius: 10px; /* Even smaller border-radius */
+    font-size: 0.9em; /* Adjust font size for readability */
+  }
+}
+
+/* Responsive Company List */
+@media (max-width: 768px) {
+  .company-list {
+    grid-template-columns: 1fr;
+  }
+}

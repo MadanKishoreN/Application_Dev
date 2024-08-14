@@ -2,7 +2,6 @@ package com.example.backend.model;
 
 import jakarta.persistence.*;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -18,14 +17,18 @@ public class JobModel {
     private String salary;
     private String skills;
 
-    @JsonIgnore
-    @ManyToOne
+
+    @ManyToOne    
     @JoinColumn(name = "company_id")
     private CompanyModel company;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "job")
+    @JsonIgnore
     private List<ApplicationModel> applications;
+
+    // Default constructor
+    public JobModel() {
+    }
 
     // Getters and Setters
     public Long getId() {

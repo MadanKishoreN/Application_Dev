@@ -12,26 +12,22 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class UserModel {
-    @JsonIgnore
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String email;
-
-    
     private String password;
-
-    private String companyEmail;
-    private String companyPassword;
     private String role;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<ScheduleModel> schedules;
 
-    @JsonIgnore
+    
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<ApplicationModel> applications;
 
     // Getters and Setters
@@ -50,12 +46,14 @@ public class UserModel {
         return role;
     }
 
+    public void setRole(String roles) {
+        this.role = roles;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
-    public void setRole(String role) {
-        this.role=role;
-    }
+    
 
     public String getPassword() {
         return password;
@@ -64,23 +62,6 @@ public class UserModel {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getCompanyEmail() {
-        return companyEmail;
-    }
-
-    public void setCompanyEmail(String companyEmail) {
-        this.companyEmail = companyEmail;
-    }
-
-    public String getCompanyPassword() {
-        return companyPassword;
-    }
-
-    public void setCompanyPassword(String companyPassword) {
-        this.companyPassword = companyPassword;
-    }
-   
 
     public List<ScheduleModel> getSchedules() {
         return schedules;

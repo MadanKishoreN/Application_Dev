@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -32,34 +33,35 @@ public class SecurityConfig {
     @Autowired
     private AuthenticationProvider authenticationProvider;
 
-    public static final List<String> HEADERS = Arrays.asList("Authorization", "Content-Type");
-    public static final List<String> METHODS = Arrays.asList("GET", "POST", "PUT", "DELETE");
-    public static final List<String> ORIGINS = Arrays.asList("http://localhost:3000");
+    private static final List<String> HEADERS = Arrays.asList("Authorization", "Content-Type");
+    private static final List<String> METHODS = Arrays.asList("GET", "POST", "PUT", "DELETE");
+    private static final List<String> ORIGINS = Arrays.asList("http://localhost:3000");
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
-                .cors(corsConfigurationSource -> corsConfigurationSource.configurationSource(corsConfigurationSource()))
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> request
+                        // Allow access to these endpoints without authentication
                         .requestMatchers(
                                 "/api/users/createUser",
                                 "/api/auth/home",
-                                "/api/auth/authenticate")
-                        .permitAll())
-                .authorizeHttpRequests(request -> request
-                        .requestMatchers(
-                                "/v3/api-docs/**",
+                                "/api/auth/authenticate",
+                                "/v3/api-docs/",
                                 "/swagger-ui.html",
-                                "/swagger-ui/**")
-                        .permitAll())
-                .authorizeHttpRequests(requests -> requests
+                                "/swagger-ui/**",
+                                "/**").permitAll()
+                        // Require authentication for other endpoints
                         .requestMatchers(
                                 "/api/users/**",
                                 "/api/auth/**",
-                                "/api/course/**",
-                                "/api/enrollments/**")
-                        .authenticated())
+                                "/api/jobs/**",
+                                "/api/companies/**",
+                                "api/applications/**",
+                                "api/schedules/**",
+                                "/api/messages/").authenticated()
+                        .anyRequest().authenticated())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
@@ -71,11 +73,11 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedHeaders(HEADERS);
-        configuration.setAllowCredentials(true);
         configuration.setAllowedMethods(METHODS);
         configuration.setAllowedOrigins(ORIGINS);
+        configuration.setAllowCredentials(true);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
-    }
+}
 }

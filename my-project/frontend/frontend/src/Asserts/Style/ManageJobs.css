@@ -1,0 +1,233 @@
+/* .manage-jobs-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .job-form {
+    margin-bottom: 20px;
+  }
+  
+  .job-form input,
+  .job-form textarea,
+  .job-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .job-form textarea {
+    resize: vertical;
+  }
+  
+  .job-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .job-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .jobs-list {
+    margin-top: 20px;
+  }
+  
+  .job-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+  }
+  
+  .job-item h3 {
+    margin: 0 0 10px;
+    color: #333;
+  }
+  
+  .job-item p {
+    margin: 0 0 10px;
+    color: #666;
+  }
+  
+  .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .status.open {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .status.closed {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .job-actions {
+    margin-top: 10px;
+  }
+  
+  .job-actions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .job-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .job-actions button:last-child {
+    background-color: #dc3545;
+  }
+  
+  .job-actions button:last-child:hover {
+    background-color: #c82333;
+  }
+   */
+   .manage-jobs-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .job-form {
+    margin-bottom: 30px;
+  }
+  
+  .job-form input,
+  .job-form textarea,
+  .job-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .job-form input:focus,
+  .job-form textarea:focus,
+  .job-form select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .job-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .job-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .jobs-list {
+    margin-top: 20px;
+  }
+  
+  .job-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  
+  .job-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .job-item h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .job-item p {
+    margin: 10px 0;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .status.open {
+    background-color: #28a745; /* Green for open jobs */
+  }
+  
+  .status.closed {
+    background-color: #dc3545; /* Red for closed jobs */
+  }
+  
+  .job-actions {
+    margin-top: 15px;
+  }
+  
+  .job-actions button {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 0.875rem;
+    transition: background-color 0.3s;
+  }
+  
+  .job-actions button:hover {
+    background-color: #5a6268;
+  }
+  
+  .job-actions button:first-of-type {
+    background-color: #007bff;
+  }
+  
+  .job-actions button:first-of-type:hover {
+    background-color: #0056b3;
+  }
+  

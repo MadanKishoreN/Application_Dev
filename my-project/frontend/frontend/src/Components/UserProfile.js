@@ -4,7 +4,7 @@ import { TextField, Button, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import '../Asserts/Style/Profile.css';
 
-const Profile = () => {
+const UserProfile = () => {
   const [profile, setProfile] = useState({
     name: '',
     email: '',
@@ -17,7 +17,7 @@ const Profile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('/api/profile')
+    axios.get('/api/user-profile')
       .then(response => setProfile(response.data))
       .catch(error => console.error(error));
   }, []);
@@ -41,10 +41,8 @@ const Profile = () => {
       formData.append('resume', profile.resume);
     }
 
-    axios.post('/api/profile', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+    axios.post('/api/user-profile', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' }
     })
     .then(response => {
       alert('Profile updated successfully');
@@ -55,6 +53,17 @@ const Profile = () => {
     });
   };
 
+  const handleDelete = () => {
+    axios.delete('/api/user-profile')
+      .then(response => {
+        alert('Profile deleted successfully');
+        navigate('/');
+      })
+      .catch(error => {
+        console.error('Error deleting profile', error);
+      });
+  };
+
   const toggleCreateResume = () => {
     setShowCreateResume(!showCreateResume);
   };
@@ -62,7 +71,7 @@ const Profile = () => {
   return (
     <Box className="profile-container">
       <Typography variant="h4" gutterBottom>
-        Profile
+        User Profile
       </Typography>
       <TextField
         label="Name"
@@ -146,7 +155,7 @@ const Profile = () => {
             onChange={handleFileChange}
           />
           <label htmlFor="resume-upload">Choose File</label>
-          <label onClick={toggleCreateResume}>Create Resume</label>
+          <Button onClick={toggleCreateResume}>Create Resume</Button>
         </div>
       )}
 
@@ -156,8 +165,15 @@ const Profile = () => {
       >
         {showCreateResume ? 'Create and Submit Resume' : 'Update Profile'}
       </Button>
+      <Button
+        onClick={handleDelete}
+        className="profile-button"
+        color="error"
+      >
+        Delete Profile
+      </Button>
     </Box>
   );
 };
 
-export default Profile;
+export default UserProfile;

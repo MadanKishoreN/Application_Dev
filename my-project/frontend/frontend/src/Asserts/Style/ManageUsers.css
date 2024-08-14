@@ -1,0 +1,88 @@
+.manage-users-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+  
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+  
+.user-form {
+    margin-bottom: 20px;
+}
+  
+.user-form input {
+    width: calc(33.333% - 12px); /* Adjust width to fit three inputs in a row with some spacing */
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+  
+.user-form input:last-of-type {
+    margin-right: 0; /* Remove margin for the last input */
+}
+  
+.user-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+}
+  
+.user-form button:hover {
+    background-color: #0056b3;
+}
+  
+.manage-users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+.manage-users-table th,
+.manage-users-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+  
+.manage-users-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+  
+.manage-users-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+  
+.manage-users-table tr:hover {
+    background-color: #e0e0e0;
+}
+  
+.manage-users-table button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+  
+.manage-users-table button:hover {
+    background-color: #5a6268;
+}
+  
+.manage-users-table button:first-of-type {
+    background-color: #007bff;
+}
+  
+.manage-users-table button:first-of-type:hover {
+    background-color: #0056b3;
+}

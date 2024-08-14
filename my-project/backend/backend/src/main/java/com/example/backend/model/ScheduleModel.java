@@ -13,13 +13,14 @@ public class ScheduleModel {
 
     private Long jobId;
 
-    @JsonIgnore
     @ManyToOne
+    
     @JoinColumn(name = "user_id")
     private UserModel user;
 
-    @JsonIgnore
+    
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "company_id")
     private CompanyModel company;
 

@@ -4,6 +4,7 @@ import com.example.backend.model.JobModel;
 import com.example.backend.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,22 +18,26 @@ public class JobController {
     private JobService jobService;
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public List<JobModel> getAllJobs() {
         return jobService.getAllJobs();
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public ResponseEntity<JobModel> getJobById(@PathVariable Long id) {
         Optional<JobModel> job = jobService.getJobById(id);
         return job.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public JobModel createJob(@RequestBody JobModel job) {
         return jobService.createJob(job);
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<JobModel> updateJob(@PathVariable Long id, @RequestBody JobModel jobDetails) {
         Optional<JobModel> job = jobService.getJobById(id);
         if (job.isPresent()) {
@@ -44,6 +49,7 @@ public class JobController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Void> deleteJob(@PathVariable Long id) {
         if (jobService.getJobById(id).isPresent()) {
             jobService.deleteJob(id);

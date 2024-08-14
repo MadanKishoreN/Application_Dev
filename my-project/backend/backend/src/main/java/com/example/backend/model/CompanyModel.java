@@ -2,7 +2,6 @@ package com.example.backend.model;
 
 import jakarta.persistence.*;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -25,6 +24,10 @@ public class CompanyModel {
     private String salary;
     private String requirements;
     private String skills;
+
+    // Default constructor
+    public CompanyModel() {
+    }
 
     // Getters and Setters
     public Long getId() {
